@@ -1,0 +1,46 @@
+<div class="side-nav-text" #polygon>
+    <ul>
+        <div class="name-box-text">
+            <h2>Texte</h2>
+        </div>
+        <br />
+        <h3>Taille de la police</h3>
+        <div>
+            <br />
+
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                step="4"
+                min="12"
+                max="44"
+                [value]="this.fontSize"
+                input
+                (change)="this.changeFontSize($event)"
+            >
+            </mat-slider>
+            <p>Taille: {{ this.fontSize }} px</p>
+
+            <button mat-raised-button id="left" (click)="this.textService.allignLeft()">Gauche</button>
+            <button mat-raised-button id="center" (click)="this.textService.allignCenter()">Centre</button>
+            <button mat-raised-button id="right" (click)="this.textService.allignRight()">Droite</button>
+
+            <br />
+
+            <button mat-raised-button #gras id="bold" (click)="this.textService.applyBold()">Gras</button>
+            <button mat-raised-button #italic id="italic" (click)="this.textService.applyItalic()">Italique</button>
+            <br />
+
+            <mat-form-field id="formField" appearance="fill">
+                <mat-label>Police du texte</mat-label>
+                <mat-select [(value)]="defaultStyleFamily" (selectionChange)="this.changeFontStyle($event)">
+                    <mat-option value="Arial">Arial</mat-option>
+                    <mat-option value="Fantasy">Fantasy</mat-option>
+                    <mat-option value="Times New Roman">Times New Roman</mat-option>
+                    <mat-option value="Monospace">Monospace</mat-option>
+                    <mat-option value="Cursive">Cursive</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+<div class="side-nav-stamp" #stamp>
+    <ul>
+        <div class="name-box-stamp">
+            <h2>Étampe</h2>
+        </div>
+        <br />
+        <h3>Épaisseur étampe</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                min="50"
+                max="550"
+                [value]="this.stampService.newWidth"
+                (input)="changeStampSize($event)"
+                step="100"
+            >
+            </mat-slider>
+            <p>Échelle: x {{ this.width / 50 }}</p>
+        </div>
+        <br />
+        <h3>Angle</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider thumbLabel="false" tickInterval="1" min="1" max="360" [value]="this.stampService.angle" (input)="changeStampAngle($event)">
+            </mat-slider>
+            <p>
+                Angle:
+                {{ this.stampService.angle }}
+            </p>
+        </div>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Choisir l'étampe</mat-label>
+            <mat-select [(value)]="stampDefault" (selectionChange)="changeStampImage($event)">
+                <mat-option value="stamp1">Polytechnique</mat-option>
+                <mat-option value="stamp2">St-Empire Romain</mat-option>
+                <mat-option value="stamp3">Surprise musicale</mat-option>
+                <mat-option value="stamp4">Surprise</mat-option>
+                <mat-option value="stamp5">Grenouille</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ul>
+</div>

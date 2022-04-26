@@ -1,0 +1,31 @@
+button {
+    margin-top: 10px;
+    background-color: rgb(181, 181, 187);
+    cursor: pointer;
+    margin-left: 10px;
+    width: 110px;
+    height: 40px;
+}
+
+mat-radio-button {
+    margin-right: 15px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.rules {
+    margin-left: 80px;
+}
+
+.rules-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.saveBtn {
+    margin-top: 20px;
+}

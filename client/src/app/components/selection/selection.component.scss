@@ -1,0 +1,32 @@
+.name-box-selection {
+    background-color: rgb(116, 178, 209);
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+mat-form-field {
+    padding-left: 10px;
+}
+
+button {
+    background-color: rgb(181, 181, 187);
+    margin-right: 30px;
+}
+
+.copy-paste,
+.cut-remove {
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    padding-right: 15px;
+    padding-top: 20px;
+}

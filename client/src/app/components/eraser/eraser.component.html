@@ -1,0 +1,23 @@
+<div class="side-nav-eraser" #eraser>
+    <ul>
+        <div class="name-box-eraser">
+            <h2>Efface</h2>
+        </div>
+        <br />
+        <h3>Épaisseur efface</h3>
+        <div class="eraser-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                max="100"
+                min="5"
+                [value]="this.eraserService.eraserWidth"
+                (input)="changeEraserSize($event)"
+            ></mat-slider>
+            <br />
+            <p>Épaisseur: {{ this.widthEraser }}px</p>
+        </div>
+        <br />
+    </ul>
+</div>

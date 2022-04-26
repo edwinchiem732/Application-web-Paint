@@ -1,0 +1,34 @@
+<div class="displayPipette">
+    <div class="name-box-color">
+        <h2>Pipette</h2>
+    </div>
+    <div class="div-flex">
+        <div class="preview-colors">
+            <div id="primary">
+                <p id="color-primary">Primaire</p>
+                <br />
+                <div id="previewPrimaryColor" [ngStyle]="{ 'background-color': this.colorService.primaryColor }"></div>
+            </div>
+            <div id="secondary">
+                <p id="color-secondary">Secondaire</p>
+                <br />
+                <div id="previewSecondaryColor" [ngStyle]="{ 'background-color': this.colorService.secondaryColor }"></div>
+            </div>
+        </div>
+    </div>
+    <div
+        id="lastColors"
+        *ngFor="let currentPosition of this.colorService.previousColors; let i = index"
+        [ngStyle]="{ 'background-color': currentPosition.color }"
+    ></div>
+
+    <div class="previewPipette">
+        <canvas
+            #canvasPreview
+            [ngStyle]="{ 'background-color': pipetteService.colorSelection }"
+            class="canvasPreview"
+            width="200"
+            height="200"
+        ></canvas>
+    </div>
+</div>

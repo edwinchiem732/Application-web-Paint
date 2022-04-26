@@ -1,0 +1,41 @@
+<div class="side-nav-polygon" #polygon>
+    <ul>
+        <div class="name-box-polygon">
+            <h2>Polygone</h2>
+        </div>
+        <br />
+        <h3>Épaisseur polygone</h3>
+        <div class="polygone-range">
+            <br />
+            <mat-slider thumbLabel="false" tickInterval="1" min="1" max="50" [value]="this.polygonService.width" (input)="changePolygonWidth($event)">
+            </mat-slider>
+            <p>Épaisseur: {{ this.widthPolygon }}px</p>
+            <br />
+            <div class="polygon-side-range">
+                <h3>Nombre de côtés</h3>
+                <br />
+                <mat-slider
+                    thumbLabel="false"
+                    tickInterval="1"
+                    min="3"
+                    max="12"
+                    [value]="this.polygonService.sidesNumber"
+                    (input)="changePolygonSides($event)"
+                >
+                </mat-slider>
+                <p>{{ this.sidesPolygon }} côtés</p>
+            </div>
+            <br />
+            <h3>Type de tracé</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Choisir le type de tracé</mat-label>
+                <mat-select [(value)]="polygonTraceSelected" (selectionChange)="changePolygonTrace($event)">
+                    <mat-option value="contour">Contour</mat-option>
+                    <mat-option value="plein">Plein</mat-option>
+                    <mat-option value="pleinContour">Plein avec contour</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <br />
+    </ul>
+</div>

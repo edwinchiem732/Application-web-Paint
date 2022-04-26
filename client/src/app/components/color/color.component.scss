@@ -1,0 +1,145 @@
+.displayColorSelection {
+    position: absolute;
+    width: 298px;
+    height: 100vh;
+    // background-color: rgb(194, 181, 181);
+    background-color: rgb(190, 209, 223);
+    z-index: 2;
+    left: 52px;
+}
+
+.name-box-color {
+    background-color: rgb(116, 178, 209);
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    width: 298px;
+    height: 50px;
+}
+
+.canvasSlider:hover {
+    cursor: pointer;
+}
+
+.canvasPalette:hover {
+    cursor: pointer;
+}
+
+.color-slider {
+    padding-left: 55px;
+}
+
+.color-palette {
+    padding-top: 20px;
+    padding-left: 55px;
+}
+
+.opacity-slider {
+    padding-left: 50px;
+    display: flex;
+}
+
+#opacity {
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.button-swap {
+    position: relative;
+    margin-top: -140px;
+    margin-left: -60px;
+}
+
+#exchangeColor {
+    position: absolute;
+    left: 162px;
+    top: 160px;
+    width: 25px;
+    height: 25px;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-colors {
+    display: flex;
+    flex-direction: row;
+    margin-left: -30px;
+}
+
+#previewSecondaryColor {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+    margin-left: -30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#color-secondary {
+    margin-top: 130px;
+    margin-left: -30px;
+}
+
+#color-primary {
+    margin-top: 130px;
+    margin-left: 60px;
+}
+
+#previewPrimaryColor {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top: -20px;
+    margin-right: 150px;
+    margin-left: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#lastColors {
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    border-radius: 30px;
+    cursor: grab;
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 20px;
+    background-color: rgb(181, 181, 187);
+    // background-color: rgb(254, 254, 255);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.inputColors {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 43px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#colorHex {
+    width: 80px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.fas {
+    margin-bottom: 10px;
+}

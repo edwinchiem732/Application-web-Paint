@@ -1,0 +1,61 @@
+.wrapper {
+    width: 800px;
+    height: 400px;
+    position: relative;
+}
+.canvas {
+    position: absolute;
+    border: black 1px solid;
+    top: 0px;
+}
+.local-email {
+    position: absolute;
+    top: 180px;
+    width: 200px;
+    background-color: rgba(216, 209, 209, 0.411);
+}
+.input {
+    position: absolute;
+    top: 240px;
+    width: 200px;
+}
+
+.email {
+    @extend .input;
+    top: 300px;
+}
+
+.cancel-export {
+    position: absolute;
+    top: 340px;
+    left: -3%;
+}
+
+button {
+    margin: 20px;
+    background-color: rgb(181, 181, 187);
+}
+
+.filters {
+    display: block;
+    margin: 15px;
+    position: absolute;
+    left: 40.5%;
+    top: -10.5%;
+}
+
+.image-type {
+    position: absolute;
+    top: 230px;
+    left: 45.5%;
+}
+
+.radio-button {
+    margin: 5px;
+    top: 350px;
+}
+
+#link {
+    margin-left: 8px;
+    margin-bottom: 10px;
+}

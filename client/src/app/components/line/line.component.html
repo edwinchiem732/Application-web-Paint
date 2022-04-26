@@ -1,0 +1,35 @@
+<div class="side-nav-line" #line>
+    <ul>
+        <div class="name-box-line">
+            <h2>Ligne</h2>
+        </div>
+        <br />
+        <h3>Épaisseur ligne</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                max="100"
+                min="1"
+                [value]="this.lineService.lineWidth"
+                (input)="changeLineSize($event)"
+            ></mat-slider>
+            <p>Épaisseur: {{ this.widthLine }}px</p>
+        </div>
+        <br />
+        <div class="junction">
+            <mat-checkbox [checked]="this.lineService.junctionOn" (change)="junctionChecked($event)">Jonction</mat-checkbox>
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                max="50"
+                min="1"
+                [value]="this.lineService.junctionRadius"
+                (input)="changeJunctionRadius($event)"
+            ></mat-slider>
+            <p>Diamètre: {{ this.junctionRadius * 2 }}px</p>
+        </div>
+        <br />
+    </ul>
+</div>

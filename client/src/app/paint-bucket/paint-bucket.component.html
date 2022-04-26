@@ -1,0 +1,21 @@
+<div class="side-nav-paint-bucket" #stamp>
+    <ul>
+        <div class="name-box-paint-bucket">
+            <h2>Sceau de peinture</h2>
+        </div>
+        <br />
+        <h3>Tolérance</h3>
+        <div class="tolerance-slider">
+            <mat-slider
+                min="0"
+                max="100"
+                step="1"
+                width="100"
+                [(ngModel)]="this.paintBucketService.percentageTolerance"
+                (click)="this.paintBucketService.comparaisonTolerance()"
+            >
+            </mat-slider>
+            <p id="tolerance">Tolérance de comparaison: {{ this.paintBucketService.percentageTolerance }}</p>
+        </div>
+    </ul>
+</div>

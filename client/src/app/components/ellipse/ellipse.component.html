@@ -1,0 +1,33 @@
+<div class="side-nav-ellipse" #ellipse>
+    <ul>
+        <div class="name-box-ellipse">
+            <h2>Ellipse</h2>
+        </div>
+        <br />
+        <h3>Épaisseur bordure</h3>
+        <div class="line-slider">
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                max="100"
+                min="1"
+                matTooltip="La couleur de l'intérieur de l'ellipse correspond à la couleur primaire. La couleur du contour de l'éllipse correspond à la couleur secondaire. "
+                [value]="this.ellipseService.width"
+                (input)="changeBorderEllipseSize($event)"
+            ></mat-slider>
+            <p>Épaisseur: {{ this.widthBorderEllipse }}px</p>
+        </div>
+        <br />
+        <h3>Type de tracé</h3>
+        <br />
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Choisir le type de tracé</mat-label>
+            <mat-select [(value)]="ellipseTraceselected" (selectionChange)="changeEllipseTrace($event)">
+                <mat-option value="contour">Contour</mat-option>
+                <mat-option value="plein">Plein</mat-option>
+                <mat-option value="pleinContour">Plein avec contour</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ul>
+</div>

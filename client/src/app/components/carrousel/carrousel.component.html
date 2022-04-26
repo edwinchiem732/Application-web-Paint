@@ -1,0 +1,106 @@
+<div class="wrapper" *ngIf="this.imageUrlArray.length > 0">
+    <div class="carousel">
+        <div class="choice-tags-filter">
+            <mat-form-field class="input-tags">
+                <mat-label>Étiquettes</mat-label>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable" (removed)="removeTagInput(tag)">
+                        {{ tag }}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input
+                        placeholder="Etiquette"
+                        [matChipInputFor]="chipList"
+                        [matChipInputAddOnBlur]="addOnBlur"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="addInputTag($event)"
+                    />
+                </mat-chip-list>
+            </mat-form-field>
+            <button (click)="filterDrawing()">Activer filtre</button>
+            <button (click)="removeFilter()">Desactiver filtre</button>
+            <div *ngIf="alert">
+                <p>{{ messageError }}</p>
+            </div>
+        </div>
+
+        <div *ngIf="this.imageUrlArray.length > 0 && this.isFilter === false" class="diplay-names-tags">
+            <div class="center-display" onClick="selectDrawing()">
+                <p><b>Nom:</b> {{ this.displayNameCenter }}</p>
+                <p><b>Tags:</b> {{ this.displayTagCenter }}</p>
+            </div>
+            <div *ngIf="this.imageUrlArray.length > 2" class="left-display">
+                <p><b>Nom:</b> {{ this.displayNameLeft }}</p>
+                <p><b>Tags:</b> {{ this.displayTagLeft }}</p>
+            </div>
+            <div *ngIf="this.imageUrlArray.length > 1" class="right-display">
+                <p><b>Nom:</b> {{ this.displayNameRight }}</p>
+                <p><b>Tags:</b> {{ this.displayTagRight }}</p>
+            </div>
+        </div>
+
+        <div *ngIf="this.isFilter === true" class="diplay-names-tags">
+            <div class="center-display" onClick="selectDrawing()">
+                <p><b>Nom:</b> {{ this.displayNameCenter }}</p>
+                <p><b>Tags:</b> {{ this.displayTagCenter }}</p>
+            </div>
+            <div *ngIf="this.filterArray.length > 2" class="left-display">
+                <p><b>Nom:</b> {{ this.displayNameLeft }}</p>
+                <p><b>Tags:</b> {{ this.displayTagLeft }}</p>
+            </div>
+            <div *ngIf="this.filterArray.length > 1" style="margin-right: 32%" class="right-display">
+                <p><b>Nom:</b> {{ this.displayNameRight }}</p>
+                <p><b>Tags:</b> {{ this.displayTagRight }}</p>
+            </div>
+        </div>
+
+        <div id="galleryView">
+            <div id="galleryContainer">
+                <button
+                    mat-raised-button
+                    class="left-arrow"
+                    color="accent"
+                    (click)="leftSideSlide()"
+                    [disabled]="this.imageUrlArray.length <= 1"
+                    matTooltip="peser sur la clé 'j'"
+                >
+                    <i class="fas fa-arrow-left fa-3x"></i>
+                </button>
+                <canvas *ngIf="this.imageUrlArray.length > 2 && this.isFilter === false" id="leftView" #canvasLeft></canvas>
+                <canvas *ngIf="this.filterArray.length > 2 && this.isFilter === true" id="leftView" #canvasLeft></canvas>
+                <canvas *ngIf="this.isFilter === false" id="mainView" #canvasCenter></canvas>
+                <canvas *ngIf="this.isFilter === true" id="mainView" #canvasCenter></canvas>
+                <canvas *ngIf="this.imageUrlArray.length > 1 && this.isFilter === false" id="rightView" #canvasRight></canvas>
+                <canvas *ngIf="this.filterArray.length > 1 && this.isFilter === true" id="rightView" #canvasRight></canvas>
+                <button
+                    mat-raised-button
+                    class="right-arrow"
+                    color="accent"
+                    (click)="rightSideSlide()"
+                    [disabled]="this.imageUrlArray.length <= 1"
+                    matTooltip="peser sur la clé 'k'"
+                >
+                    <i class="fas fa-arrow-right fa-3x"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="button">
+            <button mat-raised-button class="cancel" mat-button (click)="cancel()">Fermer</button>
+            <div class="center-btn">
+                <button mat-raised-button class="delete-btn" mat-button (click)="deleteDrawing()" [disabled]="this.imageUrlArray.length == 0">
+                    Supprimer
+                </button>
+                <button mat-raised-button class="select-btn" mat-button (click)="selectDrawing()" [disabled]="this.imageUrlArray.length == 0">
+                    Selectionner
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="error" *ngIf="this.imageUrlArray.length === 0">
+    <p>Aucune image existe</p>
+    <br />
+    <button mat-raised-button class="cancel" mat-button (click)="cancel()">Fermer</button>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main Page</title>
+    </head>
+    <header class="container">
+        <h1 class="header-item">AppPolyDessin</h1>
+    </header>
+    <body>
+        <p style="color: rgb(238, 234, 4); font-weight: bolder; font-size: xx-large;">Bienvenue<span style="color: rgb(238, 4, 160)"> sur</span>
+            <span  style="color: rgb(13, 0, 202)" >  PolyDessin</span></p>
+
+        <div id="mainPage-option">
+            <div class="button1Image" style="background-image: url('../../../assets/newDrawingButton.png')">
+                <div class="button1">
+                    <button class="button" routerLink="/editor" (click)="newDrawing()" style="color: rgb(4, 47, 238)"><b>Créer un nouveau dessin</b></button>
+                </div>
+            </div>
+
+            <div class="button2Image" style="background-image: url('../../../assets/carrouselButton.png')">
+                <div class="button2">
+                    <button class="button" routerLink="/editor" (click)="openCarrousel()" style="color: black">
+                        <b>Ouvrir le carrousel de dessins</b>
+                    </button>
+                </div>
+            </div>
+            <div class="button3Image" style="background-image: url('../../../assets/dessin3.png')">
+                <div class="button3" >
+                    <button class="button" routerLink="/editor" [hidden]="!this.isNotEmpty" (click)="continueDrawing()" style="color: rgb(146, 0, 0)">
+                        <b>Continuer un dessin </b>&nbsp; &nbsp;
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-item" style="color: black">
+            <h4 class="team-name">Équipe Poly 310</h4>
+            <p>Yanick Aouchiche, Alex Hua, Steven Diep, Johnny Khoury, Alison Nemr, Edwin Chiem</p>
+        </div>
+    </body>
+</html>

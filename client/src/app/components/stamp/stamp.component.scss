@@ -1,0 +1,22 @@
+.name-box-stamp {
+    background-color: rgb(116, 178, 209);
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+}
+
+mat-slider {
+    width: 280px;
+    position: relative;
+}
+mat-form-field {
+    padding-left: 10px;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}

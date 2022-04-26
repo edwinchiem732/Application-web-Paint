@@ -1,0 +1,24 @@
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+app-sidebar {
+    position: absolute;
+    left: 0;
+}
+
+.drawing-container {
+    overflow: auto;
+    flex: 1 1 auto;
+    box-shadow: -1px 4px 20px -6px rgba($color: #000000, $alpha: 0.85);
+}
+
+.container {
+    background-color: rgb(192, 192, 192);
+}
+.drawing {
+    display: grid;
+    width: min-content;
+    outline: none;
+}

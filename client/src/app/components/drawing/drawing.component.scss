@@ -1,0 +1,95 @@
+canvas {
+    border: 2px solid #000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 5px;
+    min-height: 5px;
+}
+
+#previewLayer {
+    position: absolute;
+    z-index: 1;
+}
+
+#gridLayer {
+    position: absolute;
+    z-index: 99 !important;
+}
+
+#secondLayer {
+    position: absolute;
+    z-index: 9;
+    min-width: 5px;
+    min-height: 5px;
+}
+
+#eraserLayer {
+    position: absolute;
+    z-index: 10;
+    min-width: 5px;
+    min-height: 5px;
+}
+
+#dot {
+    border: 2px solid #000000;
+    left: 0;
+    top: 0;
+    min-width: 250px;
+    min-height: 250px;
+    position: absolute;
+    color: black;
+}
+
+#canvas {
+    z-index: 0;
+    background-color: white;
+}
+
+#drawCanvas {
+    z-index: 1;
+}
+
+#canvas-container {
+    position: relative;
+    margin-left: 350px;
+}
+
+.grabber {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    z-index: 99 !important;
+}
+
+.grabber.bas {
+    top: 500px;
+    left: 250px;
+    cursor: grab;
+}
+
+.grabber.droite {
+    top: 250px;
+    left: 500px;
+    cursor: grab;
+}
+
+.grabber.cote {
+    top: 500px;
+    left: 500px;
+    cursor: grab;
+}
+
+#pipette {
+    z-index: 3;
+}
+
+#canvasInput {
+    position: absolute;
+    z-index: 99;
+    display: none;
+    resize: none;
+    border: dotted;
+    overflow: hidden;
+}

@@ -1,0 +1,135 @@
+* {
+    overflow: hidden;
+}
+.sidebar {
+    min-height: 100vh;
+    border: 1px solid rgb(100, 155, 189);
+    margin-right: 0px;
+    width: 50px;
+    background-color: rgb(81, 135, 174);
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    flex: 0.6;
+    // overflow: scroll;
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+.sidebar .top-bar {
+    position: relative;
+    top: 0%;
+}
+
+.sidebar .bottom-bar {
+    position: relative;
+    bottom: 0%;
+}
+
+.side-nav-pencil,
+.side-nav-eraser,
+.side-nav-line,
+.side-nav-rectangle,
+.side-nav-ellipse,
+.side-nav-polygon,
+.side-nav-aerosol,
+.side-nav-pipette,
+.side-nav-stamp,
+.side-nav-grid,
+.side-nav-pipette,
+.side-nav-paint-bucket,
+.side-nav-text {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(190, 209, 223);
+    z-index: 1;
+    left: 52px;
+    display: none;
+}
+.side-nav-selection {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(190, 209, 223);
+    // background-color: rgb(194, 181, 181);
+    z-index: 1;
+    left: 52px;
+    display: none;
+}
+
+mat-slider {
+    width: 280px;
+    position: relative;
+}
+mat-form-field {
+    padding-left: 10px;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+.name-box-pencil,
+.name-box-eraser,
+.name-box-rectangle,
+.name-box-polygon,
+.name-box-selection,
+.name-box-grid {
+    // border: 1px solid rgb(122, 51, 75);
+    // background-color: rgb(209, 109, 136);
+    border: 1px solid rgb(142, 197, 224);
+    background-color: rgb(142, 197, 224);
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+}
+
+.pencil-range {
+    margin: 0;
+    height: 400px;
+}
+
+.sidebar button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    height: 0.4cm;
+    padding: 0;
+    // padding-top: 17%;
+    // padding-bottom: 55%;
+    padding-top: 8px;
+    padding-bottom: 27px;
+    font-size: 20px;
+    width: 50px;
+    height: 25px;
+    float: right;
+}
+
+.sidebar button:hover {
+    background-color: rgb(126, 167, 196);
+    border-radius: 5px;
+}
+.sidebar button:focus {
+    background-color: rgb(126, 167, 196);
+    border-radius: 5px;
+}
+
+.selection-btn {
+    background-color: rgb(181, 181, 187);
+    cursor: pointer;
+    margin-left: 10px;
+}

@@ -1,0 +1,79 @@
+<div id="canvas-container">
+    <div
+        class="grabber cote"
+        #sideGrabber
+        [style.left.px]="this.drawingService.grabberSide.x"
+        [style.top.px]="this.drawingService.grabberSide.y"
+    ></div>
+    <div
+        class="grabber bas"
+        #bottomGrabber
+        [style.left.px]="this.drawingService.grabberBottom.x"
+        [style.top.px]="this.drawingService.grabberBottom.y"
+    ></div>
+    <div
+        class="grabber droite"
+        #rightGrabber
+        [style.left.px]="this.drawingService.grabberRight.x"
+        [style.top.px]="this.drawingService.grabberRight.y"
+    ></div>
+
+    <canvas
+        id="canvas"
+        #baseCanvas
+        [attr.width]="width"
+        [attr.height]="height"
+        (mousedown)="onMouseDown($event)"
+        (mousemove)="onMouseMove($event)"
+        (mouseup)="onMouseUp($event)"
+        (click)="onMouseClick($event)"
+        (dblclick)="onMouseDoubleClick($event)"
+    >
+    </canvas>
+
+    <div id="wrapper">
+        <textarea #canvasInput id="canvasInput" type="text" contenteditable="true"></textarea>
+    </div>
+
+    <canvas
+        id="previewLayer"
+        #previewCanvas
+        [attr.width]="width"
+        [attr.height]="height"
+        [ngStyle]="{ cursor: cursorChoice }"
+        (mousemove)="onMouseMove($event)"
+    >
+    </canvas>
+
+    <canvas id="GridLayer" #gridCanvas [attr.width]="width" [attr.height]="height"> </canvas>
+
+    <canvas
+        id="selectionCanvas"
+        #selectionCanvas
+        [attr.width]="width"
+        [attr.height]="height"
+        [ngStyle]="{ cursor: cursorChoice }"
+        (mousemove)="onMouseMove($event)"
+    >
+    </canvas>
+    <canvas
+        id="secondCanvas"
+        #secondCanvas
+        width="50px"
+        height="50px"
+        [style.display]="switchToolsService.currentTool == stampService ? 'inline-block' : 'none'"
+        [ngStyle]="{ cursor: cursorChoice }"
+    ></canvas>
+
+    <canvas
+        id="eraserCanvas"
+        #eraserCanvas
+        width="5px"
+        height="5px"
+        [style.display]="switchToolsService.currentTool == eraserService ? 'inline-block' : 'none'"
+        [ngStyle]="{ cursor: cursorChoice }"
+    ></canvas>
+
+    <div id="dot" #dot [style.height.px]="this.drawingService.dotSize.y" [style.width.px]="this.drawingService.dotSize.x"></div>
+    <div [attr.width]="width" [attr.height]="height" #background></div>
+</div>

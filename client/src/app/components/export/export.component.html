@@ -1,0 +1,43 @@
+<meta name="referrer" content="no-referrer" />
+<div class="wrapper">
+    <div>
+        <canvas class="canvas" #canvas width="200" height="150"></canvas>
+    </div>
+
+    <mat-form-field class="input">
+        <mat-label>Nom du fichier</mat-label>
+        <input matInput [(ngModel)]="name" />
+    </mat-form-field>
+
+    <div class="cancel-export" mat-dialog-actions>
+        <button mat-raised-button class="cancel" (click)="cancel()">Annuler</button>
+        <button mat-raised-button class="export" (click)="exportImage()">Exporter</button>
+        <button mat-raised-button (click)="uploadImgur()">Imgur</button>
+        <p>Le lien à Imgur:</p>
+        <a href="{{ imgurUrl }}" target="_blank" id="link">{{ imgurUrl }}</a>
+    </div>
+
+    <mat-radio-group class="filters">
+        <fieldset class="filters">
+            <legend>Filtres :</legend>
+            <mat-radio-button
+                selected="Original"
+                class="radio-button"
+                *ngFor="let filter of filters"
+                [value]="filter"
+                (change)="filterToApply($event)"
+            >
+                <p>{{ filter }}</p>
+            </mat-radio-button>
+        </fieldset>
+    </mat-radio-group>
+
+    <mat-radio-group class="image-type">
+        <fieldset>
+            <legend>Format :</legend>
+            <mat-radio-button class="radio-button" *ngFor="let exportMode of modes" [value]="exportMode" (change)="chooseExportMode($event)">
+                {{ exportMode }}
+            </mat-radio-button>
+        </fieldset>
+    </mat-radio-group>
+</div>

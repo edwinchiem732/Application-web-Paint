@@ -1,0 +1,66 @@
+<div class="displayColorSelection">
+    <div class="name-box-color">
+        <h2>Couleur</h2>
+    </div>
+    <div class="div-flex">
+        <div class="color-palette">
+            <canvas #canvasPalette class="canvasPalette" width="200" height="150" (click)="onMouseDownPalette($event)"></canvas>
+        </div>
+
+        <div class="color-slider">
+            <canvas
+                #canvasSlider
+                class="canvasSlider"
+                width="200"
+                height="25"
+                (click)="selectPrimaryAndSecondary($event)"
+                (contextmenu)="selectPrimaryAndSecondary($event)"
+            ></canvas>
+        </div>
+
+        <div class="opacity-slider">
+            <mat-slider min="0" max="1" step="0.1" width="100" [(ngModel)]="this.colorService.colorOpacity" (click)="colorOpacity()"> </mat-slider>
+            <p id="opacity">Opacité: {{ this.colorService.colorOpacity }}</p>
+        </div>
+
+        <div class="button-swap">
+            <button mat-raised-button color="accent" id="exchangeColor" (click)="exchangeColor()"><i class="fas fa-exchange-alt"></i></button>
+        </div>
+
+        <div class="preview-colors">
+            <div id="primary">
+                <p id="color-primary">Primaire</p>
+                <br />
+                <div id="previewPrimaryColor" [ngStyle]="{ 'background-color': this.colorService.primaryColor }"></div>
+            </div>
+            <div id="secondary">
+                <p id="color-secondary">Secondaire</p>
+                <br />
+                <div id="previewSecondaryColor" [ngStyle]="{ 'background-color': this.colorService.secondaryColor }"></div>
+            </div>
+        </div>
+    </div>
+    <div
+        id="lastColors"
+        *ngFor="let currentPosition of previousColors; let i = index"
+        [ngStyle]="{ 'background-color': currentPosition.color }"
+        (click)="chooseFromPreviousColors($event, currentPosition)"
+        (contextmenu)="chooseFromPreviousColors($event, currentPosition)"
+    ></div>
+
+    <div class="inputColors">
+        <label>R:</label>
+        <input id="red" type="number" min="0" max="255" #red [(ngModel)]="inputRGB[0]" [value]="inputRGB[0]" />
+        <label>V:</label>
+        <input id="green" type="number" min="0" max="255" [(ngModel)]="inputRGB[1]" #green [value]="inputRGB[1]" />
+        <label>B:</label>
+        <input id="blue" type="number" min="0" max="255" [(ngModel)]="inputRGB[2]" #blue [value]="inputRGB[2]" />
+    </div>
+    <div class="inputButton">
+        <button mat-raised-button (click)="conversionToHexa(inputRGB[0], inputRGB[1], inputRGB[2])">Confirmer le choix de couleur</button> <br />
+        <br />
+        <label>Couleur (Hexadecimale):</label>
+        <input id="colorHex" type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" [(ngModel)]="inputColor" [value]="this.hexColor" /> <br />
+        <button mat-raised-button (click)="colorInputInHexa()">Confirmer couleur hexadécimale</button>
+    </div>
+</div>

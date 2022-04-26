@@ -1,0 +1,53 @@
+<div class="side-nav-aerosol" #aerosol>
+    <ul>
+        <div class="name-box-aerosol">
+            <h2>Aérosole</h2>
+        </div>
+        <br />
+        <h3>Épaisseur aérosole</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                min="1"
+                max="50"
+                [value]="this.aerosolService.aerosolWidth"
+                (input)="changeAerosolSize($event)"
+            >
+            </mat-slider>
+            <p>Épaisseur: {{ this.widthAerosol }}px</p>
+        </div>
+        <br />
+        <h3>Diamètre goutlette</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                min="1"
+                max="10"
+                [value]="this.aerosolService.dropletDiameter"
+                (input)="changeDropletSize($event)"
+            >
+            </mat-slider>
+            <p>Diamètre: {{ this.dropletDiameter }}px</p>
+        </div>
+        <br />
+        <h3>Émission par seconde</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                min="1"
+                max="50"
+                [value]="this.aerosolService.dropletQuantity"
+                (input)="changeDropletQuantity($event)"
+            >
+            </mat-slider>
+            <p>Émission: {{ this.dropletQuantity }} par seconde</p>
+        </div>
+        <br />
+    </ul>
+</div>

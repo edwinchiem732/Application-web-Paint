@@ -1,0 +1,31 @@
+<div class="side-nav-rectangle" #rectangle>
+    <ul>
+        <div class="name-box-rectangle">
+            <h2>Rectangle</h2>
+        </div>
+        <br />
+        <h3>Épaisseur bordure</h3>
+        <div class="line-slider">
+            <br />
+            <mat-slider
+                thumbLabel="false"
+                tickInterval="1"
+                max="50"
+                min="1"
+                matTooltip="La couleur de l'intérieur du rectangle correspond à la couleur primaire. La couleur du contour du rectangle correspond à la couleur secondaire"
+                [value]="this.rectangleService.width"
+                (input)="changeBorderSize($event)"
+            ></mat-slider>
+            <p>Épaisseur: {{ this.widthBorderRectangle }}px</p>
+            <p>Rectangle Périmètre: {{ (this.rectangleService.distanceX + this.rectangleService.distanceY) * 2 }}px</p>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="rectangleTraceselected" (selectionChange)="changeRectangleTrace($event)">
+                <mat-option value="contour">Contour</mat-option>
+                <mat-option value="plein">Plein</mat-option>
+                <mat-option value="pleinContour">Plein avec contour</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ul>
+</div>

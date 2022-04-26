@@ -1,0 +1,162 @@
+<!-- the side-nav -->
+<div class="side-nav">
+    <div class="side-nav-pencil" #pencil>
+        <app-pencil></app-pencil>
+    </div>
+
+    <div class="side-nav-eraser" #eraser>
+        <app-eraser></app-eraser>
+    </div>
+
+    <div class="side-nav-line" #line>
+        <app-line></app-line>
+    </div>
+
+    <div class="side-nav-rectangle" #rectangle>
+        <app-rectangle></app-rectangle>
+    </div>
+
+    <div class="side-nav-ellipse" #ellipse>
+        <app-ellipse></app-ellipse>
+    </div>
+
+    <div class="side-nav-stamp" #stamp>
+        <app-stamp></app-stamp>
+    </div>
+
+    <div class="side-nav-aerosol" #aerosol>
+        <app-aerosol></app-aerosol>
+    </div>
+
+    <div class="side-nav-selection" #selection>
+        <app-selection></app-selection>
+    </div>
+
+    <div class="side-nav-color" #color>
+        <app-color></app-color>
+    </div>
+
+    <div class="side-nav-pipette" #pipette>
+        <app-pipette></app-pipette>
+    </div>
+
+    <div class="side-nav-paint-bucket" #paintBucket>
+        <app-paint-bucket></app-paint-bucket>
+    </div>
+
+    <div class="side-nav-polygon" #polygon>
+        <app-polygon></app-polygon>
+    </div>
+
+    <div class="side-nav-grid" #grid>
+        <app-grid></app-grid>
+    </div>
+
+    <div class="side-nav-text" #text>
+        <app-text></app-text>
+    </div>
+</div>
+
+<!--buttons sidebar-->
+<div class="sidebar">
+    <div class="top-bar">
+        <button class="text" matTooltip="Text (touche t)" matTooltipPosition="right" (click)="textSelect()">
+            <i class="fas fa-font"></i>
+        </button>
+
+        <button
+            matTooltip="Sélectionner (touche 'r' pour rectangle, 's' pour ellipse ou 'v' pour lasso)"
+            matTooltipPosition="right"
+            matTooltipColor="blue"
+            (click)="openSelect()"
+        >
+            <i class="far fa-object-group"></i>
+        </button>
+
+        <button class="pencilBtn" matTooltip="Crayon (touche c)" matTooltipPosition="right" (click)="openPencil()">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="eraserBtn" matTooltip="Efface (touche e)" matTooltipPosition="right" (click)="openEraser()">
+            <i class="fas fa-eraser"></i>
+        </button>
+
+        <button class="rectangleBtn" matTooltip="Rectangle (touche 1)" matTooltipPosition="right" (click)="openRectangle()">
+            <i class="far fa-square"></i>
+        </button>
+
+        <button class="ellipseBtn" matTooltip="Ellipse (touche 2)" matTooltipPosition="right" (click)="openEllipse()">
+            <i class="far fa-circle"></i>
+        </button>
+
+        <button class="lineBtn" matTooltip="Ligne (touche l) " matTooltipPosition="right" (click)="openLine()"><i class="fas fa-minus"></i></button>
+
+        <button class="polygoneBtn" matTooltip="Polygone (touche 3)" matTooltipPosition="right" (click)="openPolygon()">
+            <i class="fas fa-vector-square"></i>
+        </button>
+
+        <button class="aerosolBtn" matTooltip="Aerosole (touche a)" matTooltipPosition="right" (click)="openAerosol()">
+            <i class="fas fa-spray-can"></i>
+        </button>
+
+        <button class="stampBtn" matTooltip="Stamp (touche d)" matTooltipPosition="right" (click)="openStamp()">
+            <i class="fas fa-stamp"></i>
+        </button>
+
+        <button class="gridBtn" matTooltip="Grille (touche g)" matTooltipPosition="right" (click)="openGrid()">
+            <i class="fas fa-border-all"></i>
+        </button>
+
+        <button class="colorBtn" matTooltip="Couleur" matTooltipPosition="right" (click)="openColor()"><i class="fas fa-palette"></i></button>
+
+        <button class="pipette" matTooltip="Pipette (touche i)" matTooltipPosition="right" (click)="openPipette()">
+            <i class="fas fa-eye-dropper"></i>
+        </button>
+
+        <button class="paintBucket" matTooltip="Sceau de peinture (touche b))" matTooltipPosition="right" (click)="openPaintBucket()">
+            <i class="fas fa-fill-drip"></i>
+        </button>
+
+        <button
+            class="undoBtn"
+            matTooltip="Annuler (CTRL-Z)"
+            matTooltipPosition="right"
+            (click)="undoButton()"
+            [disabled]="this.undoRedoService.isActionsEmpty"
+        >
+            <i class="fas fa-undo-alt"></i>
+        </button>
+
+        <button
+            class="redoBtn"
+            matTooltip="Refaire (CTRL-Shift-Z)"
+            matTooltipPosition="right"
+            (click)="redoButton()"
+            [disabled]="this.undoRedoService.isActionsUndidEmpty"
+        >
+            <i class="fas fa-redo-alt"></i>
+        </button>
+    </div>
+
+    <div class="bottom-bar">
+        <button matTooltip="Créer un nouveau dessin (CTRL-O)" matTooltipPosition="right" (click)="openNewDrawing()">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <button matTooltip="Exporter le dessin (CTRL-E)" matTooltipPosition="right" (click)="openExport()"><i class="fas fa-download"></i></button>
+
+        <button matTooltip="Sauvegarder dessin (CTRL-S)" matTooltipPosition="right">
+            <i class="fas fa-save" (click)="openDialogSaveDrawing()"></i>
+        </button>
+
+        <button
+            matTooltip="Ouvrir caroussel de dessins (CTRL-G)"
+            matTooltipPosition="right"
+            (click)="openCarrousel()"
+            class="carouselBtn"
+            style="margin-bottom: 10px"
+        >
+            <i class="fas fa-folder-open"></i>
+        </button>
+    </div>
+</div>

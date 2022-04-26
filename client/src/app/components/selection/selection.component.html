@@ -1,0 +1,90 @@
+<div class="side-nav-selection" #selection>
+    <ul>
+        <div class="name-box-selection">
+            <h2>Sélectionner</h2>
+        </div>
+        <br />
+        <h3>Type de tracé</h3>
+        <br />
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Choisir le type de selection</mat-label>
+            <mat-select [(value)]="selectionOption" (selectionChange)="changeSelectionOption($event)" matTooltipPosition="right">
+                <mat-option value="rectangle">Rectangle</mat-option>
+                <mat-option value="ellipse">Ellipse</mat-option>
+                <mat-option value="lasso">Lasso</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br /><br />
+        <button mat-raised-button class="selection-btn" (click)="changeSelectionForm()" style="margin-left: 50px">Sélectionner tout le dessin</button>
+        <br />
+
+        <div class="copy-paste">
+            <button
+                mat-raised-button
+                class="copy"
+                matTooltip="CTRL-C"
+                (click)="this.copySelection()"
+                [disabled]="!this.selectionService.selectedBtn && !this.selectionLassoService.selectedBtn"
+                style="width: 200px"
+            >
+                Copier
+            </button>
+            <br />
+            <button
+                mat-raised-button
+                class="paste"
+                matTooltip="CTRL-V"
+                (click)="this.pasteSelection()"
+                [disabled]="!this.selectionService.isCopied && !this.selectionLassoService.isCopied"
+                style="width: 200px"
+            >
+                Coller
+            </button>
+            <br />
+        </div>
+        <div class="cut-remove">
+            <button
+                mat-raised-button
+                class="cut"
+                matTooltip="CTRL-X"
+                (click)="this.cutSelection()"
+                [disabled]="!this.selectionService.selectedBtn && !this.selectionLassoService.selectedBtn"
+                style="width: 200px"
+            >
+                Couper
+            </button>
+            <br />
+            <button
+                mat-raised-button
+                class="remove"
+                (click)="this.deleteSelection()"
+                matTooltip="Touche Delete"
+                [disabled]="!this.selectionService.selectedBtn && !this.selectionLassoService.selectedBtn"
+                style="width: 200px"
+            >
+                Supprimer
+            </button>
+        </div>
+        <h6>***Cliquez à l'extérieur de la selection pour faire Annuler-Refaire pour la selection lasso</h6>
+
+        <br />
+        <h3>Point de Magnetisme</h3>
+        <br />
+        <h6>"M" pour activer le magnetisme</h6>
+        <mat-form-field appearance="fill">
+            <mat-label>Choisir le point de magnetisme</mat-label>
+            <mat-select [(value)]="magnetismOption" (selectionChange)="changeMagnetismPoint($event)" matTooltipPosition="right">
+                <mat-option value="leftUp">En Haut a Gauche</mat-option>
+                <mat-option value="middleUp">En Haut au Centre</mat-option>
+                <mat-option value="rightUp">En Haut a Droite</mat-option>
+                <mat-option value="leftMiddle">Centre Gauche</mat-option>
+                <mat-option value="middle">Centre</mat-option>
+                <mat-option value="rightMiddle">Centre Droit</mat-option>
+                <mat-option value="leftDown">En Bas a Gauche</mat-option>
+                <mat-option value="middleDown">En Bas au Centre</mat-option>
+                <mat-option value="rightDown">En Bas a Droite</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ul>
+</div>

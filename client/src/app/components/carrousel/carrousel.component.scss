@@ -1,0 +1,154 @@
+.wrapper {
+    width: 1000px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.cancel {
+    margin-top: 200px;
+}
+
+.left-arrow {
+    border: black 1px solid;
+    background-color: rgb(165, 180, 220);
+    margin-right: 10px;
+    width: 50px;
+    height: 45px;
+}
+
+.right-arrow {
+    border: black 1px solid;
+    background-color: rgb(165, 180, 220);
+    margin-left: 10px;
+    width: 50px;
+    height: 45px;
+}
+
+button:hover {
+    cursor: pointer;
+    border-radius: black 2px solid;
+}
+
+button {
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgb(181, 181, 187);
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.error button {
+    margin-top: 0px;
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: -200px;
+    margin-left: 110px;
+}
+
+.cancel {
+    background-color: rgb(181, 181, 187);
+}
+
+#galleryContainer {
+    height: 300px;
+    width: 800px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 10px;
+}
+
+#galleryView {
+    height: 60vh;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+#mainView {
+    position: relative;
+    height: 425px;
+    width: 350px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 1;
+    border: black 1px solid;
+}
+
+#leftView {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    opacity: 0.5;
+    border-radius: 5px;
+    transform: skewy(0deg); // tilt
+    transform-origin: top right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+}
+
+#rightView {
+    position: relative;
+
+    height: 400px;
+    width: 300px;
+    opacity: 0.5;
+    border-radius: 5px;
+    transform: skewy(0deg); // tilt
+    transform-origin: top left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+}
+
+.display-names-tags {
+    text-align: center;
+}
+
+.center-display {
+    left: 500px;
+    margin-left: 25%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.left-display {
+    float: left;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.right-display {
+    float: right;
+    margin-right: 18%;
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.rules-shortcut {
+    text-align: right;
+    margin-top: 30px;
+}
